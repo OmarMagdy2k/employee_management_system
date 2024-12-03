@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:project_name",
+ "creation": "2024-12-03 18:31:39.393478",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_jypg7",
+  "department",
+  "section_break_3ejzh",
+  "project_name",
+  "description",
+  "section_break_wotng",
+  "start_date",
+  "column_break_7fbb0",
+  "end_date",
+  "section_break_8ddic",
+  "assigned_employees"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Companyy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "Departmentt",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "assigned_employees",
+   "fieldtype": "Table MultiSelect",
+   "label": "Assigned Employees",
+   "options": "Assigend Employees"
+  },
+  {
+   "fieldname": "column_break_jypg7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_3ejzh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7fbb0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8ddic",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_wotng",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-03 20:49:58.690420",
+ "modified_by": "Administrator",
+ "module": "employee_management_system",
+ "name": "Projectt",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

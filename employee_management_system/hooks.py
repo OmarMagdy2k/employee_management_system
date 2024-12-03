@@ -123,6 +123,18 @@ app_license = "MIT"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+	"Companyy": {
+		"on_load": "employee_management_system.employee_management_system.doctype.companyy.onload"
+	},
+    "Employeee": {
+		"on_load": "employee_management_system.employee_management_system.doctype.employeee.onload"
+    },
+    "Departmentt": {
+		"on_load": "employee_management_system.employee_management_system.doctype.departmentt.onload"
+	}
+
+}
 
 # Scheduled Tasks
 # ---------------
@@ -156,6 +168,22 @@ app_license = "MIT"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "employee_management_system.event.get_events"
 # }
+override_whitelisted_methods = {
+    "get_all_companies": "employee_management_system.employee_management_system.api.get_all_companies",
+    "get_company" : "employee_management_system.employee_management_system.api.",
+    "get_all_departments": "employee_management_system.employee_management_system.api.get_all_departments",
+    "get_department" : "employee_management_system.employee_management_system.api.",
+    "create_employee": "employee_management_system.employee_management_system.api.create_employee",
+    "get_employees": "employee_management_system.employee_management_system.api.get_employees",
+    "get_employee" : "employee_management_system.employee_management_system.api.get_employee",
+    "update_employee": "employee_management_system.employee_management_system.api.update_employee",
+    "delete_employee": "employee_management_system.employee_management_system.api.delete_employee",
+    "create_project": "employee_management_system.employee_management_system.api.create_project",
+    "get_projects": "employee_management_system.employee_management_system.api.get_projects",
+    "get_project" : "employee_management_system.employee_management_system.api.get_project",
+    "update_project": "employee_management_system.employee_management_system.api.update_project",
+    "delete_project": "employee_management_system.employee_management_system.api.delete_project"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
