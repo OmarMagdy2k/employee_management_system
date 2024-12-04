@@ -46,9 +46,12 @@ This project is built using:
 4. Configure environment variables in a .env file.
 
 ## Task Completion Checklist
-- [x] Employee management CRUD operations.
-- [x] API documentation for external integration.
-- [ ] Testing coverage .
+- [x] Models.
+- [x] Validations & Business Logic.
+- [x] Workflow.
+- [x] APIs.
+- [ ] Testing.
+- [ ] Logging.
 
 
 # API Documentation
