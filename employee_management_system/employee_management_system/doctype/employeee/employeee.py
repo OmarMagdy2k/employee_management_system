@@ -19,6 +19,7 @@ class Employeee(Document):
 
 	def before_validate(self):
 		if self.employee_status == "Hired" :
+			self.calculate_number_of_project_assigned()
 			if self.hired_on:
 				self.calculate_days_employed()
 		else :
@@ -26,10 +27,29 @@ class Employeee(Document):
 
 	def onload(self):
 		if self.employee_status == "Hired" :
+			self.calculate_number_of_project_assigned()
 			if self.hired_on:
 				self.calculate_days_employed()
 		else :
 			pass
+	
+	def calculate_number_of_project_assigned(self):
+		employees = frappe.get_all("Employeee", fields=["name"])
+		for employee in employees:
+			# Count projects where the employee is in the "assigned employee" field
+			assigned_projects_count = frappe.db.count(
+				"Assigend Employees",
+				filters={"employee": ["like", f"%{employee['name']}%"]}
+			)
+			frappe.msgprint(f"Number of Projects for emp : {employee['name']} is {assigned_projects_count}")
+			# Update the number_of_assigned_projects field
+			frappe.db.set_value(
+				"Employeee",
+				employee["name"],
+				"number_of_assigned_projects",
+				assigned_projects_count
+			)
+			frappe.db.commit()
 
 	def validate_email(self):
 		if not frappe.utils.validate_email_address(self.email_address):

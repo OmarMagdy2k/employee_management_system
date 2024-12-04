@@ -10,8 +10,9 @@ class Projectt(Document):
 		self.validate_department_relationship()
 		update_company_counts(self.company)
 		update_department_counts(self.department)
-		for row in self.assigned_employees:
-			update_project_count(row.employee,self.name)
+
+	def onload(self):
+		self.calculate_number_of_project_assigned()
 
 	def validate_assigned_employees(self):
 		for assigned in self.assigned_employees:
@@ -24,15 +25,23 @@ class Projectt(Document):
 		if department.company != self.company:
 			frappe.throw("Selected Department does not belong to the selected Company.")
 
-
-@frappe.whitelist()
-def update_project_count(employee_id, project_id):
-    employee = frappe.get_doc("Employeee", employee_id)
-    project_count = frappe.db.count("Assigend Employees", filters={"employee": employee_id, "parent": project_id})
-    employee.number_of_assigned_projects = project_count
-    employee.save(ignore_permissions=True)
-    frappe.db.commit()
-
+	def calculate_number_of_project_assigned(self):
+			employees = frappe.get_all("Employeee", fields=["name"])
+			for employee in employees:
+				# Count projects where the employee is in the "assigned employee" field
+				assigned_projects_count = frappe.db.count(
+					"Assigend Employees",
+					filters={"employee": ["like", f"%{employee['name']}%"]}
+				)
+				frappe.msgprint(f"Number of Projects for emp : {employee['name']} is {assigned_projects_count}")
+				# Update the number_of_assigned_projects field
+				frappe.db.set_value(
+					"Employeee",
+					employee["name"],
+					"number_of_assigned_projects",
+					assigned_projects_count
+				)
+				frappe.db.commit()
 
 @frappe.whitelist()
 def update_company_counts(company_id):

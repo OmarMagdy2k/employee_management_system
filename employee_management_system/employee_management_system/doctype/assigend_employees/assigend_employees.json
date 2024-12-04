@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:employee",
  "creation": "2024-12-03 20:48:29.425586",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -16,18 +15,16 @@
    "in_list_view": 1,
    "label": "Employee",
    "options": "Employeee",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-03 23:30:05.897918",
+ "modified": "2024-12-04 03:36:31.803466",
  "modified_by": "Administrator",
  "module": "employee_management_system",
  "name": "Assigend Employees",
- "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

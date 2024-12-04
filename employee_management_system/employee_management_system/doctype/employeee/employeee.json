@@ -99,8 +99,9 @@
   {
    "depends_on": "eval:doc.employee_status === \"Hired\";",
    "fieldname": "number_of_assigned_projects",
-   "fieldtype": "Int",
-   "label": "Number of Assigned Projects"
+   "fieldtype": "Data",
+   "label": "Number of Assigned Projects",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_nzitj",
@@ -125,7 +126,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-04 01:29:49.580997",
+ "modified": "2024-12-04 02:46:39.547152",
  "modified_by": "Administrator",
  "module": "employee_management_system",
  "name": "Employeee",

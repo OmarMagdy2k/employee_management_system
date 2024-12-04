@@ -130,6 +130,9 @@ doc_events = {
     "Employeee": {
 		"on_load": "employee_management_system.employee_management_system.doctype.employeee.onload"
     },
+    "Projectt": {
+        "on_load": "employee_management_system.employee_management_system.doctype.projectt.projectt.onload"
+    },
     "Departmentt": {
 		"on_load": "employee_management_system.employee_management_system.doctype.departmentt.onload"
 	}

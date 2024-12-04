@@ -22,6 +22,3 @@ class Companyy(Document):
 		self.number_of_employees = frappe.db.count('Employeee', {'company': self.name})
 		self.number_of_projects = frappe.db.count('Projectt', {'company': self.name})
 		self.db_update()
-
-		# self.save()
-		# self.reload()
