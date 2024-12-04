@@ -22,7 +22,4 @@ frappe.ui.form.on('Projectt', {
             };
         });
 	}
-	// refresh: function(frm) {
-
-	// }
 });

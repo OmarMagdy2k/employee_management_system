@@ -36,13 +36,10 @@ class Employeee(Document):
 	def calculate_number_of_project_assigned(self):
 		employees = frappe.get_all("Employeee", fields=["name"])
 		for employee in employees:
-			# Count projects where the employee is in the "assigned employee" field
 			assigned_projects_count = frappe.db.count(
 				"Assigend Employees",
 				filters={"employee": ["like", f"%{employee['name']}%"]}
 			)
-			frappe.msgprint(f"Number of Projects for emp : {employee['name']} is {assigned_projects_count}")
-			# Update the number_of_assigned_projects field
 			frappe.db.set_value(
 				"Employeee",
 				employee["name"],
