@@ -47,8 +47,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Employee Status",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "employee_name",
@@ -126,7 +125,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-04 02:46:39.547152",
+ "modified": "2024-12-04 18:51:05.470591",
  "modified_by": "Administrator",
  "module": "employee_management_system",
  "name": "Employeee",
